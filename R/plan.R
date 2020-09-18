@@ -9,7 +9,7 @@ the_plan <- drake_plan(
     
     dependencies = rmarkdown::render(
       knitr_in("dependencies.Rmd"),
-      output_file = file_out("public/dependencies.html")
+      output_file = file_out("docs/dependencies.html")
     ),
     
     rendered_site = render_site() 

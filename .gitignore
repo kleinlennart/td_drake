@@ -9,3 +9,4 @@
 *.R.un~
 *.Rmd.un~
 *.yml.un~
+.Rproj.user
