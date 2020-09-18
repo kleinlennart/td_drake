@@ -1,0 +1,29 @@
+---
+title: "Twitter Deutschland"
+date: "`r stringr::str_c('Updated ', format(Sys.time(), '%d %B, %Y'))`"
+output: html_document
+---
+
+## Background
+
+The repository for this project is here: https://github.com/conradborchers/td_drake
+
+## Authors
+
+This project is carried out by:
+
+Christian Fischer
+University of Tübingen, Germany
+christian.fischer@uni-tuebingen.de
+
+Conrad Borchers
+University of Tübingen, Germany
+conrad.borchers@student.uni-tuebingen.de
+
+Lennart Klein
+University of Tübingen, Germany
+lennart.klein@student.uni-tuebingen.de
+
+Fitore Morina
+University of Tübingen, Germany
+fitore.morina@uni-tuebingen.de

@@ -1,4 +1,11 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Ruserdata
+*.csv
+*.rda
+/.drake
+/data
+*.R.un~
+*.Rmd.un~
+*.yml.un~

@@ -1,0 +1,11 @@
+name: NGSSchat Sentiment Analysis
+output_dir: '.'
+navbar:
+  title: #NGSSchat Sentiment Analysis
+  left:
+  - text: Dependencies
+    href: dependencies.html
+  - text: Drake Workflow Graph
+    href: graph.html
+output:
+  html_document:
