@@ -3,6 +3,10 @@ title Dependencies
 output html_document
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = TRUE, echo = FALSE)
+```
+
 ```{r}
 sessionInfo() #
 ```

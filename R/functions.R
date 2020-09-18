@@ -4,5 +4,5 @@ create_graph <- function(){
 }
 
 render_site <- function() {
-  rmarkdown::render_site("public")
+  rmarkdown::render_site("docs")
 }

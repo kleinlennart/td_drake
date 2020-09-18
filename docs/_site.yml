@@ -3,9 +3,11 @@ output_dir: '.'
 navbar:
   title: #NGSSchat Sentiment Analysis
   left:
-  - text: Dependencies
-    href: dependencies.html
+  - text: Descriptive Statistics
+    href: descriptives.html
   - text: Drake Workflow Graph
     href: graph.html
+  - text: Dependencies
+    href: dependencies.html
 output:
   html_document:
