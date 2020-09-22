@@ -10,3 +10,5 @@
 *.Rmd.un~
 *.yml.un~
 .Rproj.user
+*.env
+*.RDataTmp
