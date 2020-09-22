@@ -1,0 +1,76 @@
+---
+title: "Summary of Downloaded Data"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+params:
+  d: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = TRUE, echo = FALSE)
+```
+
+```{r, read in data and save data, include=FALSE}
+fn <- dir("./data/raw")
+
+# Query, that is later appended to data frames while merging
+
+q <- fn %>% str_split("_")
+q <- lapply(q, `[[`, 1) %>% unlist
+
+# Read in each file, add download time and query name, rbind data frames
+
+full <- NULL
+i <- 1
+
+for (fn in fn){
+  load(paste("./data/raw/", fn, sep=""))
+  tweets_dl$dl_at <- file.info(paste("./data/raw/", fn, sep=""))$mtime
+  tweets_dl$q <- q[i]
+  full <- rbind(full, tweets_dl)
+  cat("Iteration", i, "of", length(q), "complete.\n")
+  i <- i+1
+}
+
+tweets_dl <- full
+
+rm(fn, i, full)
+
+# Save data frames and individually by query
+
+q <- q %>% unique
+
+i <- 1
+for (query in q){
+    saveRDS(tweets_dl[tweets_dl$q==query,], paste("./data/hashtags/", query, "_until_", 
+        max(tweets_dl[tweets_dl$q==query,]$created_at) %>% lubridate::date(), 
+        ".rds", sep=""))
+    cat("Iteration", i, "of", length(q), "complete.\n")
+    i <- i+1
+}
+
+# Save full data frame, remove duplicates
+
+tweets_dl <- tweets_dl[order(tweets_dl$created_at),]
+tweets_dl <- tweets_dl[!duplicated(tweets_dl$status_id),]
+
+saveRDS(tweets_dl, "./data/raw_merged.rds")
+```
+
+## Downloaded until:
+
+```{r, summary of current data}
+fn <- dir("./data/hashtags")
+cat("Current state of data by query/hashtag:\n")
+for (d in fn){
+  cat(d, "\n")
+}
+```
+
+### Number of tweets
+```{r results="asis", warning = FALSE}
+summarytools::freq(tweets_dl$q, style = 'rmarkdown')
+```

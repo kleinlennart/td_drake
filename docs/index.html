@@ -273,7 +273,16 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="aggregate_data.html">Data Summary</a>
+</li>
+<li>
+  <a href="create_variables.html">Variable Summary</a>
+</li>
+<li>
   <a href="descriptives.html">Descriptive Statistics</a>
+</li>
+<li>
+  <a href="analysis.html">Main Analysis</a>
 </li>
 <li>
   <a href="graph.html">Drake Workflow Graph</a>
@@ -294,22 +303,35 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Twitter Deutschland</h1>
-<h4 class="date">Updated 18 September, 2020</h4>
+<h4 class="date">Updated 22 September, 2020</h4>
 
 </div>
 
 
-<div id="background" class="section level2">
-<h2>Background</h2>
-<p>The repository for this project is here: <a href="https://github.com/conradborchers/td_drake" class="uri">https://github.com/conradborchers/td_drake</a></p>
-</div>
+<p><br></p>
 <div id="authors" class="section level2">
 <h2>Authors</h2>
 <p>This project is carried out by:</p>
 <p>Christian Fischer University of Tübingen, Germany <a href="mailto:christian.fischer@uni-tuebingen.de" class="email">christian.fischer@uni-tuebingen.de</a></p>
+<p>Fitore Morina University of Tübingen, Germany <a href="mailto:fitore.morina@uni-tuebingen.de" class="email">fitore.morina@uni-tuebingen.de</a></p>
 <p>Conrad Borchers University of Tübingen, Germany <a href="mailto:conrad.borchers@student.uni-tuebingen.de" class="email">conrad.borchers@student.uni-tuebingen.de</a></p>
 <p>Lennart Klein University of Tübingen, Germany <a href="mailto:lennart.klein@student.uni-tuebingen.de" class="email">lennart.klein@student.uni-tuebingen.de</a></p>
-<p>Fitore Morina University of Tübingen, Germany <a href="mailto:fitore.morina@uni-tuebingen.de" class="email">fitore.morina@uni-tuebingen.de</a></p>
+<p><br></p>
+</div>
+<div id="workflow" class="section level2">
+<h2>Workflow</h2>
+<ol style="list-style-type: decimal">
+<li><p>Raw data files are aggregated and duplicates removed. Timestamps of download and search terms are added as variables. Individual data files for all search terms are created as well as “raw_merged.rds”. A summary of the current data pool is <a href="aggregate_data.html">here</a>.</p></li>
+<li><p>“raw_merged.rds” is cleaned and additional variables for analysis are created. A cleaned, final data set is created as “clean_final.rds” For an overview on how variables were created and a codebook go <a href="create_variables.html">here</a>.</p></li>
+<li><p>“raw_merged.rds” is analysed descriptively and through model building, see <a href="descriptives.html">here</a> and <a href="analysis.html">here</a>.</p></li>
+<li><p>The R-package “drake” was employed for this project. A full project workflow as created by drake can be found <a href="graph.html">here</a>.</p></li>
+<li><p>A complete overview on all dependencies for reproducibility is <a href="dependencies.html">here</a>.</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="source-code" class="section level2">
+<h2>Source Code</h2>
+<p>The repository for this project is here: <a href="https://github.com/conradborchers/td_drake" class="uri">https://github.com/conradborchers/td_drake</a></p>
 </div>
 
 

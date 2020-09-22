@@ -1,0 +1,45 @@
+---
+title: "Additional Variables and Codebook"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+params:
+  d: ""
+---
+
+## Codebook
+
+### Grouping variables
+
+* q: original search term of download (as hashtag)
+
+### User-level variables
+
+### Tweet-level variables
+
+* dl_at: time of download, corresponds to several user-level variables, such as "follower_count"
+
+* time_on_twitter_seconds: time between post and account creation in seconds
+
+* time_on_twitter_period: more readable format in days-hours-minutes-seconds
+
+## Code
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = TRUE, echo = FALSE)
+```
+
+```{r, assign params, include=FALSE}
+d <- params$d
+```
+
+```{r create variables, echo=TRUE}
+d$time_on_twitter_seconds <- interval(d$account_created_at, d$created_at) %>% time_length
+d$time_on_twitter_period <- seconds_to_period(d$time_on_twitter_seconds)
+```
+
+```{r save cleaned data, echo=TRUE}
+saveRDS(d, "./data/clean_final.rds")
+```

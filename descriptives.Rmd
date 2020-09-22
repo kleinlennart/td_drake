@@ -17,6 +17,7 @@ knitr::opts_chunk$set(message = TRUE, echo = FALSE)
 d <- params$d
 ```
 
-```{r results="asis", warning = FALSE}
-summarytools::freq(d$q, style = 'rmarkdown')
+```{r descriptives, warning = FALSE, echo=TRUE}
+summary(d$time_on_twitter_seconds)
+summary(d$favorite_count)
 ```

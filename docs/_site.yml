@@ -3,8 +3,14 @@ output_dir: '.'
 navbar:
   title: #NGSSchat Sentiment Analysis
   left:
+  - text: Data Summary
+    href: aggregate_data.html
+  - text: Variable Summary
+    href: create_variables.html
   - text: Descriptive Statistics
     href: descriptives.html
+  - text: Main Analysis
+    href: analysis.html
   - text: Drake Workflow Graph
     href: graph.html
   - text: Dependencies

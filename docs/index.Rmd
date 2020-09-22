@@ -4,9 +4,7 @@ date: "`r stringr::str_c('Updated ', format(Sys.time(), '%d %B, %Y'))`"
 output: html_document
 ---
 
-## Background
-
-The repository for this project is here: https://github.com/conradborchers/td_drake
+<br>
 
 ## Authors
 
@@ -16,6 +14,10 @@ Christian Fischer
 University of Tübingen, Germany
 christian.fischer@uni-tuebingen.de
 
+Fitore Morina
+University of Tübingen, Germany
+fitore.morina@uni-tuebingen.de
+
 Conrad Borchers
 University of Tübingen, Germany
 conrad.borchers@student.uni-tuebingen.de
@@ -24,6 +26,28 @@ Lennart Klein
 University of Tübingen, Germany
 lennart.klein@student.uni-tuebingen.de
 
-Fitore Morina
-University of Tübingen, Germany
-fitore.morina@uni-tuebingen.de
+<br>
+
+## Workflow
+
+1) Raw data files are aggregated and duplicates removed. Timestamps of download and
+search terms are added as variables. Individual data files for all search terms are
+created as well as "raw_merged.rds". A summary of the current data pool is <a href="aggregate_data.html">here</a>.
+
+2) "raw_merged.rds" is cleaned and additional variables for analysis are created.
+A cleaned, final data set is created as "clean_final.rds"
+For an overview on how variables were created and a codebook go <a href="create_variables.html">here</a>.
+
+3) "raw_merged.rds" is analysed descriptively and through model building, see 
+<a href="descriptives.html">here</a> and <a href="analysis.html">here</a>.
+
+4) The R-package "drake" was employed for this project. A full project workflow
+as created by drake can be found <a href="graph.html">here</a>.
+
+5) A complete overview on all dependencies for reproducibility is <a href="dependencies.html">here</a>.
+
+<br>
+
+## Source Code
+
+The repository for this project is here: https://github.com/conradborchers/td_drake

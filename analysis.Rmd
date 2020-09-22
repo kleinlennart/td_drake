@@ -1,0 +1,23 @@
+---
+title: "Main Analysis and Models"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+params:
+  d: ""
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = TRUE, echo = FALSE)
+```
+
+```{r, assign params, include=FALSE}
+d <- params$d
+```
+
+```{r analysis, warning = FALSE, echo=TRUE}
+t.test(d$favorite_count[d$is_retweet==T], d$favorite_count[d$is_retweet==F])  # retweeted tweets get more likes
+cor.test(d$followers_count, d$favourites_count) # follower count correlates with number of likes
+```
